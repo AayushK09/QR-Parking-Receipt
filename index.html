@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Parking Booking </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>My Parking Booking</h1>
+        <form id="booking-form" action="/book" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}">
+
+            <label for="vehicle">Vehicle No:</label>
+            <input type="text" id="vehicle" name="vehicle" required>
+
+            <label for="entry-time">Entry Time:</label>
+            <input type="datetime-local" id="entry-time" name="entry-time" required>
+
+            <button type="submit">Book Now</button>
+        </form>
+        <div id="receipt" class="hidden">
+            <div id="receipt-content">
+                <div id="receipt-details"></div>
+                <div id="qr-code-container">
+                    <canvas id="qr-code"></canvas>
+                </div>
+                <button id="print-button" onclick="printReceipt()">Print Receipt</button>
+                <button id="download-pdf-button" onclick="downloadPDF()">Receipt PDF</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
