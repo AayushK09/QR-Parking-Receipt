@@ -9,5 +9,4 @@ This project is a simple web app for generating parking receipts along with a QR
 
 ## Tech Stack
 - **Frontend**: HTML, JavaScript
-- **Backend**: Node.js, Express
-- **QR Code Generation**: `qrcode` npm package
+- **QR Code Generation**: `qrcode` Library.
